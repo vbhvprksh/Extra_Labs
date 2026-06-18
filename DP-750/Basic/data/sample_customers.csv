@@ -1,0 +1,13 @@
+customer_id,name,city,signup_date,total_spend,orders,loyalty_tier,email
+1,Aarav,Delhi,2026-01-05,1200.50,3,Silver,aarav@example.com
+2,Meera,Mumbai,2026-01-07,2500.00,5,Gold,meera@example.com
+3,Kabir,Bengaluru,2026-01-08,,2,Bronze,kabir@example.com
+4,Sara,Delhi,2026-01-09,875.25,,Silver,sara@example.com
+5,Rohan,Chennai,2026-01-11,0,0,,rohan@example.com
+6,Anika,,2026-01-12,3100.75,6,Gold,
+7,Vikram,Pune,,450.00,1,Bronze,vikram@example.com
+8,Nisha,Hyderabad,2026-01-14,1800.00,4,Silver,nisha@example.com
+2,Meera,Mumbai,2026-01-07,2500.00,5,Gold,meera@example.com
+9,Dev,Delhi,2026-01-16,999.99,2,,dev@example.com
+10,Isha,Mumbai,2026-01-18,,3,Silver,isha@example.com
+10,Isha,Mumbai,2026-01-18,,3,Silver,isha@example.com
