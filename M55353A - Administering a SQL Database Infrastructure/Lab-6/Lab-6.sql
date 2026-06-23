@@ -217,7 +217,7 @@ Change the path if needed.
 
 BACKUP DATABASE BackupLabDB
 
-TO DISK='C:\SQLBackups\BackupLabDB_Full.bak'
+TO DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-6\BackupLabDB_Full.bak'
 
 WITH
 
@@ -300,7 +300,7 @@ without restoring.
 
 RESTORE VERIFYONLY
 
-FROM DISK='C:\SQLBackups\BackupLabDB_Full.bak';
+FROM DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-6\BackupLabDB_Full.bak';
 
 GO
 
@@ -364,7 +364,7 @@ Backup Start Date
 
 RESTORE HEADERONLY
 
-FROM DISK='C:\SQLBackups\BackupLabDB_Full.bak';
+FROM DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-6\BackupLabDB_Full.bak';
 
 GO
 
@@ -709,7 +709,7 @@ BackupLabDB_Full2.bak
 
 BACKUP DATABASE BackupLabDB
 
-TO DISK='C:\SQLBackups\BackupLabDB_Full2.bak'
+TO DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-6\BackupLabDB_Full2.bak'
 
 WITH
 
@@ -771,7 +771,7 @@ checks backup integrity.
 
 RESTORE VERIFYONLY
 
-FROM DISK='C:\SQLBackups\BackupLabDB_Full2.bak';
+FROM DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-6\BackupLabDB_Full2.bak';
 GO
 
 
@@ -813,6 +813,8 @@ since last Full Backup.
 
 USE BackupLabDB;
 GO
+
+Select * from dbo.Employees;
 
 
 INSERT INTO dbo.Employees
@@ -901,7 +903,7 @@ BackupLabDB_Diff.bak
 
 BACKUP DATABASE BackupLabDB
 
-TO DISK='C:\SQLBackups\BackupLabDB_Diff.bak'
+TO DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-6\BackupLabDB_Diff.bak'
 
 WITH
 
@@ -959,7 +961,7 @@ BackupType
 
 RESTORE HEADERONLY
 
-FROM DISK='C:\SQLBackups\BackupLabDB_Diff.bak';
+FROM DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-6\BackupLabDB_Diff.bak';
 GO
 
 
@@ -1086,7 +1088,7 @@ BackupLabDB_Log.trn
 
 BACKUP LOG BackupLabDB
 
-TO DISK='C:\SQLBackups\BackupLabDB_Log.trn'
+TO DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-6\BackupLabDB_Log.trn'
 
 WITH
 
@@ -1148,7 +1150,7 @@ Transaction Log Backup.
 
 RESTORE HEADERONLY
 
-FROM DISK='C:\SQLBackups\BackupLabDB_Log.trn';
+FROM DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-6\BackupLabDB_Log.trn';
 GO
 
 

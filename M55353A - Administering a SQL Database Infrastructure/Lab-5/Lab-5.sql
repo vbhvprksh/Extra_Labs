@@ -270,7 +270,7 @@ BackupLabDB
 
 
 
-Tasks
+Right CLick>>Tasks
 
 
 
@@ -311,7 +311,7 @@ BackupLabDB_Full.bak
 BACKUP DATABASE BackupLabDB
 
 
-TO DISK='D:\SQLBackups\BackupLabDB_Full.bak'
+TO DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-5\BackupLabDB_Full.bak'
 
 
 WITH INIT;
@@ -430,7 +430,7 @@ inside backup file.
 RESTORE HEADERONLY
 
 
-FROM DISK='D:\SQLBackups\BackupLabDB_Full.bak';
+FROM DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-5\BackupLabDB_Full.bak';
 
 
 GO
@@ -529,7 +529,7 @@ Insert additional rows
 ===============================================================================
 */
 
-
+Select * from Orders
 INSERT INTO Orders
 
 
@@ -546,7 +546,7 @@ GO
 BACKUP DATABASE BackupLabDB
 
 
-TO DISK='D:\SQLBackups\BackupLabDB_Diff.bak'
+TO DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-5\BackupLabDB_Diff.bak'
 
 
 WITH DIFFERENTIAL;
@@ -923,7 +923,7 @@ there is no current database backup.
 
 BACKUP LOG BackupLabDB
 
-TO DISK='D:\SQLBackups\TestLogBackup.trn';
+TO DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-5\TestLogBackup.trn';
 
 GO
 
