@@ -1,36 +1,49 @@
-# /*
+/*
+===============================================================================
+MODULE 5 : BACKUP AND RESTORE STRATEGIES
 
-# MODULE 5 : RECOVERY MODELS AND BACKUP STRATEGIES
+PART 1 : PLAN A BACKUP STRATEGY
 
-PART 1 : RECOVERY MODELS AND DATABASE BACKUPS
+Exercise 1 : Plan a Backup Strategy
+
 
 Topics Covered
 
-1. Understanding Recovery Models
-2. SIMPLE Recovery Model
-3. FULL Recovery Model
-4. BULK_LOGGED Recovery Model
-5. Switching Recovery Models
-6. Performing Full Database Backup
-7. Verifying Backup Files
-8. Backup Best Practices
-9. Troubleshooting Backup Issues
+
+1. Full Backup
+
+2. Differential Backup
+
+3. Transaction Log Backup
+
+4. Backup Compression
+
+5. Verify Backup Files
+
+6. Verify Backup History
+
+7. Restore Verification
+
+
 
 Execute entire script as SysAdmin
 
+
+
 Prerequisites
 
-Create folder manually
 
-C:\SQLBackups\
+Create folder
 
-SQL Server Service Account must have
 
-Read and Write permissions
+D:\SQLBackups\
 
-on
 
-C:\SQLBackups\
+
+SQL Server Service Account
+
+must have Write permissions
+
 
 ===============================================================================
 */
@@ -38,620 +51,585 @@ C:\SQLBackups\
 USE master;
 GO
 
-# /*
 
-# STEP 1 : CREATE DATABASE
+/*
+===============================================================================
+STEP 1 : CREATE DATABASE
 
-Why are we creating this database?
-
-This database will be used to demonstrate
-
-different recovery models and backup strategies.
-
-Recovery Model determines
-
-How transactions are logged
-
-Whether Point-In-Time recovery is possible
-
-Whether Transaction Log backups are supported
-
-Equivalent SSMS Navigation
-
-Databases
-
-Right Click
-
-New Database
 
 Database Name
 
-BackupLab
+
+BackupLabDB
+
+
+
+Equivalent UI
+
+
+Databases
+
+
+Right Click
+
+
+New Database
+
+
+
+BackupLabDB
+
+
 
 ===============================================================================
 */
 
-CREATE DATABASE BackupLab;
+
+CREATE DATABASE BackupLabDB;
 GO
 
-/******************************************************************************
 
-VERIFY DATABASE CREATION
 
-Catalog View
+/*
+VERIFY DATABASE
 
-sys.databases
 
 Expected Result
 
-## name
 
-BackupLab
+BackupLabDB
 
-## recovery_model_desc
 
-SIMPLE
 
-Note
-
-New databases are created in
-
-SIMPLE recovery model
-
-by default.
 
 UI Verification
 
+
 SSMS
 
+
 Databases
+
 
 Refresh
 
-BackupLab
 
-Right Click
 
-Properties
+BackupLabDB
 
-Options
 
-Recovery Model
+should appear.
 
-SIMPLE
 
-******************************************************************************/
+===============================================================================
+*/
+
 
 SELECT
 
 name,
 
-recovery_model_desc
+create_date
 
 FROM sys.databases
 
-WHERE name='BackupLab';
+WHERE name='BackupLabDB';
+
 GO
 
-# /*
 
-# STEP 2 : CHANGE RECOVERY MODEL TO FULL
 
-FULL Recovery Model
+/*
+===============================================================================
+STEP 2 : CREATE SAMPLE TABLE
 
-Characteristics
 
-Supports Point-In-Time Restore
+Business Requirement
 
-Supports Log Backups
 
-Supports Tail Log Backups
+Daily Full Backup
 
-Minimal data loss
 
-Suitable For
+Hourly Log Backup
 
-Production Databases
 
-Financial Systems
-
-ERP Systems
-
-Mission Critical Applications
-
-Important
-
-After changing to FULL
-
-A Full Backup must be taken
-
-before log backups become possible.
-
-Equivalent UI
-
-SSMS
-
-Databases
-
-BackupLab
-
-Right Click
-
-Properties
-
-Options
-
-Recovery Model
-
-Select
-
-FULL
-
-Click OK
 
 ===============================================================================
 */
 
-ALTER DATABASE BackupLab
 
-SET RECOVERY FULL;
+USE BackupLabDB;
 GO
 
-/******************************************************************************
 
-VERIFY RECOVERY MODEL
+CREATE TABLE Orders
+(
+
+OrderID INT PRIMARY KEY,
+
+OrderDate DATE,
+
+Amount MONEY
+
+);
+
+GO
+
+
+INSERT INTO Orders
+
+VALUES
+
+(1,GETDATE(),1000),
+
+(2,GETDATE(),2000);
+
+GO
+
+
+
+
+/*
+VERIFY TABLE DATA
+
 
 Expected Result
 
-## name
 
-BackupLab
-
-## recovery_model_desc
-
-FULL
-
-UI Verification
-
-Databases
-
-BackupLab
-
-Properties
-
-Options
-
-Recovery Model
-
-FULL
-
-******************************************************************************/
-
-SELECT
-
-name,
-
-recovery_model_desc
-
-FROM sys.databases
-
-WHERE name='BackupLab';
-GO
-
-# /*
-
-# STEP 3 : CHANGE RECOVERY MODEL TO BULK_LOGGED
-
-BULK_LOGGED Recovery Model
-
-Purpose
-
-Reduces transaction log growth
-
-during large bulk operations.
-
-Examples
-
-BULK INSERT
-
-SELECT INTO
-
-Index Rebuild
-
-BCP Import
-
-Advantages
-
-Smaller log backups
-
-Disadvantages
-
-Point-In-Time restore
-
-not supported
-
-during bulk operations.
-
-Equivalent UI
-
-BackupLab
-
-Properties
-
-Options
-
-Recovery Model
-
-Bulk Logged
-
-===============================================================================
-*/
-
-ALTER DATABASE BackupLab
-
-SET RECOVERY BULK_LOGGED;
-GO
-
-/******************************************************************************
-
-VERIFY RECOVERY MODEL
-
-Expected Result
-
-BULK_LOGGED
-
-******************************************************************************/
-
-SELECT
-
-name,
-
-recovery_model_desc
-
-FROM sys.databases
-
-WHERE name='BackupLab';
-GO
-
-# /*
-
-# STEP 4 : CHANGE RECOVERY MODEL TO SIMPLE
-
-SIMPLE Recovery Model
-
-Characteristics
-
-Transaction log automatically truncated
-
-No log backups allowed
-
-Cannot restore to specific time
-
-Suitable For
-
-Development Databases
-
-Testing Environments
-
-Reporting Databases
-
-Equivalent UI
-
-BackupLab
-
-Properties
-
-Options
-
-Recovery Model
-
-Simple
-
-===============================================================================
-*/
-
-ALTER DATABASE BackupLab
-
-SET RECOVERY SIMPLE;
-GO
-
-/******************************************************************************
-
-VERIFY CURRENT RECOVERY MODEL
-
-Expected Result
-
-recovery_model_desc
-
----
-
-SIMPLE
-
-UI Verification
-
-Databases
-
-BackupLab
-
-Properties
-
-Options
-
-Recovery Model
-
-Simple
-
-******************************************************************************/
-
-SELECT
-
-recovery_model_desc
-
-FROM sys.databases
-
-WHERE name='BackupLab';
-GO
-
-# /*
-
-# STEP 5 : PERFORM FULL DATABASE BACKUP
-
-What is a Full Backup?
-
-A Full Backup contains
-
-All data pages
-
-System metadata
-
-Objects
-
-Indexes
-
-Stored Procedures
-
-Backup Location
-
-C:\SQLBackups\BackupLab.bak
-
-WITH INIT
-
-Overwrites existing backup file
-
-instead of appending.
-
-Equivalent UI
-
-BackupLab
-
-Right Click
-
-Tasks
-
-Back Up
-
-Backup Type
-
-Full
-
-Destination
-
-Disk
-
-Add
-
-C:\SQLBackups\BackupLab.bak
-
-Click OK
-
-===============================================================================
-*/
-
-BACKUP DATABASE BackupLab
-
-TO DISK='C:\SQLBackups\BackupLab.bak'
-
-WITH INIT;
-GO
-
-/******************************************************************************
-
-EXPECTED RESULT
-
-Processed xxx pages
-
-BACKUP DATABASE successfully processed.
-
-Backup file created
-
-BackupLab.bak
-
-Common Errors
-
-Cannot open backup device
-
-Cause
-
-Folder missing
-
-Fix
-
-Create
-
-C:\SQLBackups\
-
-Cause
-
-SQL Server service lacks permissions
-
-Fix
-
-Grant Full Control
-
-to SQL Server Service Account
-
-******************************************************************************/
-
-# /*
-
-# STEP 6 : VERIFY BACKUP FILE
-
-RESTORE HEADERONLY
-
-Reads metadata from backup
-
-without restoring database.
-
-Information Returned
-
-Backup Name
-
-Backup Type
-
-Backup Start Date
-
-Database Version
-
-Recovery Model
-
-Backup Size
-
-Equivalent UI
-
-Not available in SSMS GUI
-
-Execute TSQL only
-
-===============================================================================
-*/
-
-RESTORE HEADERONLY
-
-FROM DISK='C:\SQLBackups\BackupLab.bak';
-GO
-
-/******************************************************************************
-
-EXPECTED RESULT
-
-## BackupType
 
 1
 
-## BackupName
 
-BackupLab
+1000
 
-## DatabaseName
 
-BackupLab
 
-BackupStartDate
 
-BackupFinishDate
+2
 
-BackupType Values
 
-1 = Full Backup
+2000
 
-2 = Transaction Log Backup
 
-5 = Differential Backup
 
-******************************************************************************/
 
-# /*
+UI Verification
 
-# STEP 7 : COMPARISON OF RECOVERY MODELS
 
-+----------------------------------------------------------+
-| Recovery Model | Log Backup | PITR | Log Growth |
-+----------------------------------------------------------+
-| SIMPLE         | No         | No   | Low        |
-| FULL           | Yes        | Yes  | High       |
-| BULK_LOGGED    | Yes        | Limited | Medium  |
-+----------------------------------------------------------+
+SSMS
 
-PITR
 
-Point In Time Restore
+BackupLabDB
 
-===============================================================================
-*/
 
-# /*
+Tables
 
-# STEP 8 : BEST PRACTICES
 
-Always take Full Backups regularly
+dbo.Orders
 
-Use FULL Recovery for Production
 
-Schedule Log Backups every 15 minutes
 
-Test restores periodically
+Right Click
 
-Store backups on separate disks
 
-Keep multiple backup generations
 
-Use CHECKSUM option
+Select Top 1000 Rows
 
-Example
 
-BACKUP DATABASE BackupLab
-
-TO DISK='C:\SQLBackups\BackupLab.bak'
-
-WITH INIT,CHECKSUM;
 
 ===============================================================================
 */
+
+
+SELECT *
+
+FROM Orders;
+
 GO
 
-# /*
 
-# STEP 9 : MINI LAB EXERCISES
 
-Exercise 1
+/*
+===============================================================================
+STEP 3 : PERFORM FULL BACKUP
 
-Switch database to FULL
 
-Take Full Backup
+Full Backup captures
 
-Exercise 2
 
-Take Differential Backup
+Entire Database
 
-Exercise 3
 
-Create second database
 
-FinanceDB
 
-Exercise 4
+Equivalent UI
 
-Check recovery model
 
-Exercise 5
 
-Perform backup verification
+BackupLabDB
 
-Exercise 6
 
-Try backup to invalid path
 
-Observe error message
+Tasks
+
+
+
+Back Up
+
+
+
+
+Backup Type
+
+
+
+Full
+
+
+
+
+Destination
+
+
+
+Disk
+
+
+
+File Name
+
+
+
+BackupLabDB_Full.bak
+
+
 
 ===============================================================================
 */
+
+
+BACKUP DATABASE BackupLabDB
+
+
+TO DISK='D:\SQLBackups\BackupLabDB_Full.bak'
+
+
+WITH INIT;
+
+
 GO
 
-# /*
 
-STEP 10 : CLEANUP
 
-Run only if cleanup is required
+
+/*
+===============================================================================
+VERIFY FULL BACKUP
+
+
+Catalog Views
+
+
+msdb.dbo.backupset
+
+
+
+
+Expected Result
+
+
+
+database_name
+
+
+BackupLabDB
+
+
+
+
+type
+
+
+D
+
+
+
+
+D means
+
+
+Database Backup
+
+
+
+
+UI Verification
+
+
+
+Windows Explorer
+
+
+
+
+D:\SQLBackups
+
+
+
+
+BackupLabDB_Full.bak
+
+
+
+
+should appear
+
+
+
+
+===============================================================================
+*/
+
+
+SELECT
+
+database_name,
+
+backup_start_date,
+
+backup_finish_date,
+
+type
+
+FROM msdb.dbo.backupset
+
+WHERE database_name='BackupLabDB';
+
+GO
+
+
+
+
+/*
+===============================================================================
+STEP 4 : VERIFY BACKUP FILE
+
+
+RESTORE HEADERONLY
+
+
+Displays metadata stored
+inside backup file.
+
+
+
+===============================================================================
+*/
+
+
+RESTORE HEADERONLY
+
+
+FROM DISK='D:\SQLBackups\BackupLabDB_Full.bak';
+
+
+GO
+
+
+
+
+/*
+EXPECTED RESULT
+
+
+
+DatabaseName
+
+
+BackupLabDB
+
+
+
+
+BackupType
+
+
+1
+
+
+
+
+Compressed
+
+
+0
+
+
+
+
+===============================================================================
+*/
+
+
+
+/*
+===============================================================================
+STEP 5 : VERIFY BACKUP INTEGRITY
+
+
+RESTORE VERIFYONLY
+
+
+
+Checks backup readability.
+
+
+Does NOT restore database.
+
+
+
+===============================================================================
+*/
+
+
+RESTORE VERIFYONLY
+
+
+FROM DISK='D:\SQLBackups\BackupLabDB_Full.bak';
+
+
+GO
+
+
+
+
+/*
+EXPECTED RESULT
+
+
+
+The backup set on file 1 is valid.
+
+
+
+===============================================================================
+*/
+
+
+/*
+===============================================================================
+STEP 6 : DIFFERENTIAL BACKUP
+
+
+
+Insert additional rows
+
+
+
+===============================================================================
+*/
+
+
+INSERT INTO Orders
+
+
+VALUES
+
+
+(3,GETDATE(),5000);
+
+GO
+
+
+
+
+BACKUP DATABASE BackupLabDB
+
+
+TO DISK='D:\SQLBackups\BackupLabDB_Diff.bak'
+
+
+WITH DIFFERENTIAL;
+
+
+GO
+
+
+
+
+/*
+===============================================================================
+VERIFY DIFFERENTIAL BACKUP
+
+
+Expected Result
+
+
+
+type
+
+
+I
+
+
+
+
+I means
+
+
+Differential Backup
+
+
+
+===============================================================================
+*/
+
+
+SELECT
+
+database_name,
+
+backup_start_date,
+
+type
+
+FROM msdb.dbo.backupset
+
+WHERE database_name='BackupLabDB';
+
+GO
+/*
+===============================================================================
+MODULE 5 : BACKUP AND RESTORE STRATEGIES
+
+PART 2 : CONFIGURE DATABASE RECOVERY MODELS
+
+Exercise 2 : Configure Database Recovery Models
+
+
+Topics Covered
+
+
+1. Viewing Recovery Models
+
+2. SIMPLE Recovery Model
+
+3. FULL Recovery Model
+
+4. BULK_LOGGED Recovery Model
+
+5. Verifying Recovery Models
+
+6. Recovery Model Comparison
+
+7. Best Practices
+
+8. Troubleshooting
+
+9. Mini Lab Exercises
+
+
+Execute entire script as SysAdmin
 
 ===============================================================================
 */
@@ -659,44 +637,1021 @@ Run only if cleanup is required
 USE master;
 GO
 
-ALTER DATABASE BackupLab
 
-SET SINGLE_USER
 
-WITH ROLLBACK IMMEDIATE;
-GO
+/*
+===============================================================================
+STEP 1 : VERIFY CURRENT RECOVERY MODEL
 
-DROP DATABASE BackupLab;
-GO
 
-/******************************************************************************
+Recovery Model determines
 
-EXPECTED RESULT
 
-BackupLab
+How transactions are logged
 
-Removed
+
+Whether Transaction Log Backups
+can be performed
+
+
+How much data can be recovered
+
+
+
+
+Recovery Models
+
+
+SIMPLE
+
+
+FULL
+
+
+BULK_LOGGED
+
+
+
+
+Catalog View
+
+
+sys.databases
+
+
+
+
+Expected Result
+
+
+BackupLabDB
+
+
+FULL
+
+
+
+New databases inherit
+Recovery Model from model database.
+
+
+
 
 UI Verification
 
+
 SSMS
+
 
 Databases
 
-Refresh
 
-BackupLab
+BackupLabDB
 
-disappears
 
-Backup File
+Right Click
 
-BackupLab.bak
 
-still remains
+Properties
 
-Delete manually if needed.
 
-******************************************************************************/
+Options
+
+
+Recovery Model
+
+
+
+
+===============================================================================
+*/
+
+
+SELECT
+
+name,
+
+recovery_model_desc
+
+FROM sys.databases
+
+WHERE name='BackupLabDB';
+
+GO
+
+
+
+
+/*
+===============================================================================
+STEP 2 : CONFIGURE SIMPLE RECOVERY MODEL
+
+
+SIMPLE Recovery Model
+
+
+Automatically truncates
+inactive transaction log records.
+
+
+
+
+Supports
+
+
+Full Backup
+
+
+Differential Backup
+
+
+
+
+Does NOT Support
+
+
+Transaction Log Backup
+
+
+
+
+Recommended For
+
+
+Development Databases
+
+
+Test Databases
+
+
+Reporting Databases
+
+
+
+
+Equivalent UI
+
+
+BackupLabDB
+
+
+Properties
+
+
+Options
+
+
+Recovery Model
+
+
+Simple
+
+
+
+===============================================================================
+*/
+
+
+ALTER DATABASE BackupLabDB
+
+SET RECOVERY SIMPLE;
+
+GO
+
+
+
+
+/*
+===============================================================================
+VERIFY SIMPLE RECOVERY MODEL
+
+
+Catalog View
+
+
+sys.databases
+
+
+
+
+Expected Result
+
+
+
+name
+
+
+BackupLabDB
+
+
+
+
+recovery_model_desc
+
+
+SIMPLE
+
+
+
+
+UI Verification
+
+
+BackupLabDB
+
+
+Properties
+
+
+Options
+
+
+Recovery Model
+
+
+Simple
+
+
+
+===============================================================================
+*/
+
+
+SELECT
+
+name,
+
+recovery_model_desc
+
+FROM sys.databases
+
+WHERE name='BackupLabDB';
+
+GO
+
+
+
+
+
+/*
+===============================================================================
+STEP 3 : VERIFY LOG BACKUP FAILURE
+
+
+Transaction Log Backups
+cannot be taken under
+SIMPLE Recovery Model.
+
+
+
+
+Expected Result
+
+
+Error Message
+
+
+BACKUP LOG cannot be performed because
+there is no current database backup.
+
+
+
+
+===============================================================================
+*/
+
+
+BACKUP LOG BackupLabDB
+
+TO DISK='D:\SQLBackups\TestLogBackup.trn';
+
+GO
+
+
+
+
+
+/*
+===============================================================================
+STEP 4 : CONFIGURE FULL RECOVERY MODEL
+
+
+FULL Recovery Model
+
+
+Preserves all transaction log records.
+
+
+
+
+Supports
+
+
+Full Backup
+
+
+Differential Backup
+
+
+Transaction Log Backup
+
+
+
+
+Recommended For
+
+
+Production Systems
+
+
+Banking Applications
+
+
+E-Commerce Systems
+
+
+
+
+Equivalent UI
+
+
+BackupLabDB
+
+
+Properties
+
+
+Options
+
+
+Recovery Model
+
+
+Full
+
+
+
+===============================================================================
+*/
+
+
+ALTER DATABASE BackupLabDB
+
+SET RECOVERY FULL;
+
+GO
+
+
+
+
+
+/*
+===============================================================================
+VERIFY FULL RECOVERY MODEL
+
+
+Expected Result
+
+
+BackupLabDB
+
+
+
+
+recovery_model_desc
+
+
+FULL
+
+
+
+
+UI Verification
+
+
+BackupLabDB
+
+
+Properties
+
+
+Options
+
+
+Recovery Model
+
+
+Full
+
+
+
+===============================================================================
+*/
+
+
+SELECT
+
+name,
+
+recovery_model_desc
+
+FROM sys.databases
+
+WHERE name='BackupLabDB';
+
+GO
+
+
+
+
+
+/*
+===============================================================================
+STEP 5 : TAKE FULL BACKUP
+
+
+After switching from SIMPLE
+to FULL Recovery Model
+
+
+A Full Backup must be taken
+before Transaction Log Backups
+can be performed.
+
+
+
+
+===============================================================================
+*/
+
+
+BACKUP DATABASE BackupLabDB
+
+TO DISK='D:\SQLBackups\BackupLabDB_AfterFull.bak'
+
+WITH INIT;
+
+GO
+
+
+
+
+
+/*
+===============================================================================
+VERIFY FULL BACKUP
+
+
+Catalog Views
+
+
+msdb.dbo.backupset
+
+
+
+
+Expected Result
+
+
+
+database_name
+
+
+BackupLabDB
+
+
+
+
+type
+
+
+D
+
+
+
+
+D means
+
+
+Database Backup
+
+
+
+
+===============================================================================
+*/
+
+
+SELECT
+
+database_name,
+
+backup_start_date,
+
+type
+
+FROM msdb.dbo.backupset
+
+WHERE database_name='BackupLabDB';
+
+GO
+
+
+
+
+
+/*
+===============================================================================
+STEP 6 : VERIFY LOG BACKUP
+
+
+Under FULL Recovery Model
+
+
+Transaction Log Backup
+is supported.
+
+
+
+
+===============================================================================
+*/
+
+
+BACKUP LOG BackupLabDB
+
+TO DISK='D:\SQLBackups\BackupLabDB_Log.trn';
+
+GO
+
+
+
+
+
+/*
+===============================================================================
+VERIFY LOG BACKUP
+
+
+Catalog Views
+
+
+msdb.dbo.backupset
+
+
+
+
+Expected Result
+
+
+
+database_name
+
+
+BackupLabDB
+
+
+
+
+type
+
+
+L
+
+
+
+
+L means
+
+
+Transaction Log Backup
+
+
+
+
+UI Verification
+
+
+Windows Explorer
+
+
+D:\SQLBackups
+
+
+
+
+BackupLabDB_Log.trn
+
+
+
+
+should appear.
+
+
+
+
+===============================================================================
+*/
+
+
+SELECT
+
+database_name,
+
+backup_start_date,
+
+type
+
+FROM msdb.dbo.backupset
+
+WHERE database_name='BackupLabDB';
+
+GO
+
+
+
+
+
+
+/*
+===============================================================================
+STEP 7 : CONFIGURE BULK_LOGGED RECOVERY MODEL
+
+
+BULK_LOGGED minimizes logging
+for bulk operations.
+
+
+
+
+Examples
+
+
+Bulk Insert
+
+
+BCP
+
+
+SELECT INTO
+
+
+Index Rebuild
+
+
+
+
+Supports
+
+
+Transaction Log Backup
+
+
+
+
+Reduces
+
+
+Transaction Log Growth
+
+
+
+
+Equivalent UI
+
+
+BackupLabDB
+
+
+Properties
+
+
+Options
+
+
+Recovery Model
+
+
+Bulk Logged
+
+
+
+
+===============================================================================
+*/
+
+
+ALTER DATABASE BackupLabDB
+
+SET RECOVERY BULK_LOGGED;
+
+GO
+
+
+
+
+
+/*
+===============================================================================
+VERIFY BULK_LOGGED RECOVERY MODEL
+
+
+Expected Result
+
+
+BackupLabDB
+
+
+
+
+recovery_model_desc
+
+
+BULK_LOGGED
+
+
+
+
+UI Verification
+
+
+BackupLabDB
+
+
+Properties
+
+
+Options
+
+
+Recovery Model
+
+
+Bulk Logged
+
+
+
+
+===============================================================================
+*/
+
+
+SELECT
+
+name,
+
+recovery_model_desc
+
+FROM sys.databases
+
+WHERE name='BackupLabDB';
+
+GO
+
+
+
+
+
+
+/*
+===============================================================================
+STEP 8 : RECOVERY MODEL COMPARISON
+
+
+Recovery Model        Log Backup      Point In Time Recovery
+
+
+SIMPLE                No              No
+
+
+FULL                  Yes             Yes
+
+
+BULK_LOGGED           Yes             Limited
+
+
+
+
+===============================================================================
+*/
+GO
+
+
+
+
+
+/*
+===============================================================================
+STEP 9 : BEST PRACTICES
+
+
+Use SIMPLE
+
+
+For Development Systems
+
+
+
+
+Use FULL
+
+
+For Mission Critical Systems
+
+
+
+
+Use BULK_LOGGED
+
+
+During Bulk Imports
+
+
+
+
+Take Full Backup
+
+
+Immediately after switching
+from SIMPLE to FULL.
+
+
+
+
+Monitor
+
+
+Transaction Log Growth
+
+
+
+
+===============================================================================
+*/
+GO
+
+
+
+
+
+
+/*
+===============================================================================
+STEP 10 : TROUBLESHOOTING
+
+
+Common Error
+
+
+BACKUP LOG cannot be performed.
+
+
+
+
+Cause
+
+
+Database is in SIMPLE
+Recovery Model.
+
+
+
+
+Fix
+
+
+
+ALTER DATABASE BackupLabDB
+
+
+SET RECOVERY FULL;
+
+
+
+
+Take Full Backup.
+
+
+
+
+Retry Transaction Log Backup.
+
+
+
+
+Another Common Error
+
+
+Transaction Log file
+becomes very large.
+
+
+
+
+Cause
+
+
+No Transaction Log Backups
+
+
+
+
+Fix
+
+
+Schedule regular
+Log Backups.
+
+
+
+
+===============================================================================
+*/
+GO
+
+
+
+
+
+
+/*
+===============================================================================
+STEP 11 : MINI LAB EXERCISES
+
+
+Exercise 1
+
+
+Switch database
+to SIMPLE.
+
+
+
+
+Exercise 2
+
+
+Switch database
+to BULK_LOGGED.
+
+
+
+
+Exercise 3
+
+
+Take Full Backup.
+
+
+
+
+Exercise 4
+
+
+Take Log Backup.
+
+
+
+
+Exercise 5
+
+
+Identify Recovery Models
+for all databases.
+
+
+
+
+===============================================================================
+*/
+GO
+
+
+
+
+
+
+/*
+===============================================================================
+STEP 12 : CHALLENGE QUERY
+
+
+Display Recovery Models
+for all databases.
+
+
+
+
+===============================================================================
+*/
+
+
+SELECT
+
+name,
+
+recovery_model_desc
+
+FROM sys.databases;
 
 GO
