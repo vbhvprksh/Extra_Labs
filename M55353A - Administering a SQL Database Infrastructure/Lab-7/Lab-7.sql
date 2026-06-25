@@ -378,7 +378,7 @@ the Log Chain.
 
 BACKUP DATABASE RestoreLabDB
 
-TO DISK='C:\SQLBackups\RestoreLabDB.bak'
+TO DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-7\RestoreLabDB.bak'
 
 WITH
 
@@ -415,7 +415,7 @@ BackupType
 
 RESTORE HEADERONLY
 
-FROM DISK='C:\SQLBackups\RestoreLabDB.bak';
+FROM DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-7\RestoreLabDB.bak';
 
 GO
 
@@ -554,7 +554,7 @@ Transaction Log
 
 BACKUP LOG RestoreLabDB
 
-TO DISK='C:\SQLBackups\RestoreLabDB_Log.trn'
+TO DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-7\RestoreLabDB_Log.trn'
 
 WITH
 
@@ -587,7 +587,7 @@ BackupType
 
 RESTORE HEADERONLY
 
-FROM DISK='C:\SQLBackups\RestoreLabDB_Log.trn';
+FROM DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-7\RestoreLabDB_Log.trn';
 
 GO
 
@@ -729,7 +729,7 @@ GO
 
 RESTORE DATABASE RestoreLabDB
 
-FROM DISK='C:\SQLBackups\RestoreLabDB.bak'
+FROM DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-7\RestoreLabDB.bak'
 
 WITH
 
@@ -830,7 +830,7 @@ Restore With Recovery
 
 RESTORE LOG RestoreLabDB
 
-FROM DISK='C:\SQLBackups\RestoreLabDB_Log.trn'
+FROM DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-7\RestoreLabDB_Log.trn'
 
 WITH RECOVERY;
 
@@ -966,7 +966,7 @@ Execute TSQL
 
 RESTORE VERIFYONLY
 
-FROM DISK='C:\SQLBackups\RestoreLabDB.bak';
+FROM DISK='D:\Certifications\001___Koenig_Extras\Vaibhav_labs\Extra_Labs\M55353A - Administering a SQL Database Infrastructure\Lab-7\RestoreLabDB.bak';
 
 GO
 
