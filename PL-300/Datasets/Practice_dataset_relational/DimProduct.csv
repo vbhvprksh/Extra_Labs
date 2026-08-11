@@ -1,0 +1,34 @@
+ProductKey,ProductName,Category,Subcategory,ListPrice,ProductClass
+P0001,Dell Inspiron,Electronics,Laptop,78402.11,Standard
+P0002,HP Pavilion,Electronics,Laptop,84843.62,Professional
+P0003,Lenovo IdeaPad,Electronics,Laptop,49455.97,Premium
+P0004,Acer Aspire,Electronics,Laptop,72704.35,Premium
+P0005,Dell 24 Monitor,Electronics,Monitor,9687.04,Premium
+P0006,LG UltraWide,Electronics,Monitor,13562.66,Premium
+P0007,Samsung Monitor,Electronics,Monitor,28961.66,Premium
+P0008,Sony WH,Electronics,Headphones,2543.22,Professional
+P0009,JBL Tune,Electronics,Headphones,5357.02,Professional
+P0010,Boat Rockerz,Electronics,Headphones,5266.08,Premium
+P0011,Ergo Office Chair,Furniture,Chair,7500.28,Standard
+P0012,Executive Chair,Furniture,Chair,17260.66,Premium
+P0013,Visitor Chair,Furniture,Chair,4829.26,Standard
+P0014,Office Desk,Furniture,Desk,18192.38,Professional
+P0015,Standing Desk,Furniture,Desk,24450.77,Standard
+P0016,Compact Desk,Furniture,Desk,20949.1,Standard
+P0017,Wood Bookshelf,Furniture,Bookshelf,13877.03,Professional
+P0018,Metal Bookshelf,Furniture,Bookshelf,5257.26,Professional
+P0019,Premium Notebook,Office Supplies,Notebook,219.44,Standard
+P0020,Spiral Notebook,Office Supplies,Notebook,510.27,Standard
+P0021,Business Notebook,Office Supplies,Notebook,277.71,Standard
+P0022,Gel Pen Pack,Office Supplies,Pen,411.23,Professional
+P0023,Ball Pen Pack,Office Supplies,Pen,81.19,Standard
+P0024,Premium Pen,Office Supplies,Pen,494.76,Professional
+P0025,A4 Paper 500 Sheets,Office Supplies,Printer Paper,412.93,Standard
+P0026,A3 Paper 500 Sheets,Office Supplies,Printer Paper,321.45,Standard
+P0027,Laptop Backpack,Accessories,Backpack,1898.56,Premium
+P0028,Business Backpack,Accessories,Backpack,5386.92,Standard
+P0029,Wireless Keyboard,Accessories,Keyboard,4492.0,Standard
+P0030,Mechanical Keyboard,Accessories,Keyboard,1962.9,Standard
+P0031,Wireless Mouse,Accessories,Mouse,1007.03,Premium
+P0032,Ergonomic Mouse,Accessories,Mouse,2604.34,Professional
+P0033,Gaming Mouse,Accessories,Mouse,754.23,Premium

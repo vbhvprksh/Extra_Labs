@@ -1,0 +1,13 @@
+SalesChannel,PaymentMethod,OrderCount
+Online,Credit Card,210
+Online,UPI,249
+Online,Bank Transfer,189
+Online,Cash,253
+Retail Store,Credit Card,351
+Retail Store,UPI,262
+Retail Store,Bank Transfer,441
+Retail Store,Cash,379
+Distributor,Credit Card,320
+Distributor,UPI,191
+Distributor,Bank Transfer,111
+Distributor,Cash,144

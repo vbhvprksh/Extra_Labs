@@ -1,0 +1,181 @@
+CustomerKey,CustomerName,Email,Gender,CustomerSegment,City,State,Region,CustomerTier,SignupDate
+C0001,Arjun Sharma,arjun.sharma1@example.com,Male,Corporate,Bhubaneswar,Odisha,East,Gold,2023-07-18
+C0002,Arjun Kumar,arjun.kumar2@example.com,Male,Small Business,Bhubaneswar,Odisha,East,Gold,2025-01-21
+C0003,Aarav Patil,aarav.patil3@example.com,Male,Corporate,Nagpur,Maharashtra,West,Bronze,2023-04-22
+C0004,Amit Singh,amit.singh4@example.com,Female,Consumer,Nagpur,Maharashtra,West,Gold,2024-07-08
+C0005,Meera Gupta,meera.gupta5@example.com,Male,Home Office,Bengaluru,Karnataka,South,Gold,2022-11-15
+C0006,Aditya Singh,aditya.singh6@example.com,Female,Home Office,Mumbai,Maharashtra,West,Gold,2024-01-06
+C0007,Kavya Kulkarni,kavya.kulkarni7@example.com,Male,Home Office,Mumbai,Maharashtra,West,Bronze,2024-02-15
+C0008,Sanjay Nair,,Male,Consumer,Chennai,Tamil Nadu,South,Gold,2025-03-28
+C0009,Neha Mishra,neha.mishra9@example.com,Male,Consumer,Bengaluru,Karnataka,South,Silver,2022-06-13
+C0010,Priya Mehta,priya.mehta10@example.com,Male,Home Office,Kolkata,West Bengal,East,Silver,2024-01-18
+C0011,Karan Kumar,karan.kumar11@example.com,Male,Corporate,Bengaluru,Karnataka,South,Bronze,2025-10-31
+C0012,Neha Deshmukh,neha.deshmukh12@example.com,Female,Corporate,Delhi,Delhi,North,Bronze,2024-02-17
+C0013,Sneha Pawar,sneha.pawar13@example.com,Male,Home Office,Pune,Maharashtra,West,,2023-04-15
+C0014,Priya Patil,priya.patil14@example.com,Female,Corporate,Nagpur,Maharashtra,West,Bronze,2025-03-07
+C0015,Riya Singh,riya.singh15@example.com,Male,Home Office,Kolkata,West Bengal,East,Gold,2024-07-28
+C0016,Neha Shah,neha.shah16@example.com,Female,Small Business,Jaipur,Rajasthan,North,Bronze,2025-01-08
+C0017,Isha Gupta,isha.gupta17@example.com,Female,Consumer,Nagpur,Maharashtra,West,Gold,2022-10-11
+C0018,Arjun Deshmukh,arjun.deshmukh18@example.com,Female,Consumer,Kolkata,West Bengal,East,Silver,2022-11-24
+C0019,Isha Jain,isha.jain19@example.com,Female,Consumer,Delhi,Delhi,North,Bronze,2024-12-19
+C0020,Arjun Kumar,arjun.kumar20@example.com,Female,Consumer,Jaipur,Rajasthan,North,Silver,2023-07-01
+C0021,Meera Deshmukh,meera.deshmukh21@example.com,Female,Corporate,Delhi,Delhi,North,Bronze,2022-01-07
+C0022,Arjun Pawar,arjun.pawar22@example.com,Male,Corporate,Kolkata,West Bengal,East,Silver,2023-09-04
+C0023,Rahul Kulkarni,rahul.kulkarni23@example.com,Female,Small Business,Jaipur,Rajasthan,North,Gold,2022-01-02
+C0024,Arjun Nair,arjun.nair24@example.com,Male,Consumer,Chennai,Tamil Nadu,South,Gold,2023-09-22
+C0025,Vivek Patil,vivek.patil25@example.com,Male,Corporate,Mumbai,Maharashtra,West,Gold,2024-09-22
+C0026,Riya Kulkarni,riya.kulkarni26@example.com,Female,Corporate,Nashik,Maharashtra,West,Bronze,2023-06-27
+C0027,Karan Shah,karan.shah27@example.com,Female,Small Business,Bengaluru,Karnataka,South,Bronze,2024-03-28
+C0028,Kavya Patil,kavya.patil28@example.com,Male,Home Office,Nagpur,Maharashtra,West,Gold,2023-04-06
+C0029,Vivek Kulkarni,vivek.kulkarni29@example.com,Male,Consumer,Nagpur,Maharashtra,West,Gold,2025-04-20
+C0030,Vihaan Joshi,vihaan.joshi30@example.com,Female,Consumer,Mumbai,Maharashtra,West,Bronze,2022-03-06
+C0031,Neha Verma,neha.verma31@example.com,Male,Corporate,Kolkata,West Bengal,East,Bronze,2024-09-21
+C0032,Vivek Jain,vivek.jain32@example.com,Female,Small Business,Delhi,Delhi,North,Gold,2023-05-13
+C0033,Arjun Patil,arjun.patil33@example.com,Female,Small Business,Kolkata,West Bengal,East,Silver,2024-06-01
+C0034,Kavya Pawar,kavya.pawar34@example.com,Male,Consumer,Bhubaneswar,Odisha,East,Silver,2022-04-21
+C0035,Sneha Mishra,sneha.mishra35@example.com,Male,Corporate,Mumbai,Maharashtra,West,Bronze,2023-05-25
+C0036,Kavya Deshmukh,kavya.deshmukh36@example.com,Female,Small Business,Hyderabad,Telangana,South,Gold,2023-01-11
+C0037,Aditya Mehta,aditya.mehta37@example.com,Male,Consumer,Jaipur,Rajasthan,North,Gold,2022-07-20
+C0038,Neha Deshmukh,neha.deshmukh38@example.com,Female,Corporate,Hyderabad,Telangana,South,Silver,2024-09-21
+C0039,Vihaan Deshmukh,vihaan.deshmukh39@example.com,Female,Home Office,Hyderabad,Telangana,South,Silver,2022-01-05
+C0040,Ananya Singh,ananya.singh40@example.com,Female,Corporate,Bhubaneswar,Odisha,East,Gold,2025-02-12
+C0041,Ananya Joshi,ananya.joshi41@example.com,Male,Home Office,Pune,Maharashtra,West,Gold,2025-04-01
+C0042,Vihaan Jain,,Male,Consumer,Delhi,Delhi,North,Bronze,2024-10-26
+C0043,Aditya Pawar,aditya.pawar43@example.com,Male,Corporate,Nashik,Maharashtra,West,Silver,2022-05-21
+C0044,Arjun Nair,arjun.nair44@example.com,Male,Consumer,Lucknow,Uttar Pradesh,North,Silver,2023-05-20
+C0045,Vivek Jain,vivek.jain45@example.com,Female,Corporate,Jaipur,Rajasthan,North,Bronze,2023-10-10
+C0046,Sneha Joshi,sneha.joshi46@example.com,Male,Home Office,Bengaluru,Karnataka,South,Silver,2024-03-21
+C0047,Sneha Nair,sneha.nair47@example.com,Female,Consumer,Mumbai,Maharashtra,West,Gold,2022-01-20
+C0048,Amit Joshi,amit.joshi48@example.com,Male,Home Office,Jaipur,Rajasthan,North,Gold,2023-06-28
+C0049,Neha Gupta,neha.gupta49@example.com,Female,Home Office,Bengaluru,Karnataka,South,Bronze,2022-11-20
+C0050,Nisha Sharma,nisha.sharma50@example.com,Female,Consumer,Kolkata,West Bengal,East,Gold,2025-02-09
+C0051,Priya Patil,priya.patil51@example.com,Male,Home Office,Mumbai,Maharashtra,West,Silver,2025-02-07
+C0052,Sanjay Joshi,sanjay.joshi52@example.com,Male,Home Office,Bhubaneswar,Odisha,East,Bronze,2023-12-04
+C0053,Riya Verma,riya.verma53@example.com,Female,Home Office,Pune,Maharashtra,West,Gold,2022-07-09
+C0054,Aarav Gupta,aarav.gupta54@example.com,Female,Corporate,Nashik,Maharashtra,West,Bronze,2025-07-28
+C0055,Kavya Kulkarni,kavya.kulkarni55@example.com,Male,Consumer,Bhubaneswar,Odisha,East,Gold,2024-05-25
+C0056,Rohan Kulkarni,rohan.kulkarni56@example.com,Male,Small Business,Pune,Maharashtra,West,Gold,2024-01-27
+C0057,Vihaan Verma,vihaan.verma57@example.com,Female,Corporate,Chennai,Tamil Nadu,South,Bronze,2022-03-23
+C0058,Neha Kumar,neha.kumar58@example.com,Female,Corporate,Mumbai,Maharashtra,West,Gold,2023-12-26
+C0059,Rahul Mishra,rahul.mishra59@example.com,Male,Corporate,Nashik,Maharashtra,West,Bronze,2024-04-24
+C0060,Sneha Mishra,sneha.mishra60@example.com,Male,Home Office,Hyderabad,Telangana,South,Gold,2025-10-03
+C0061,Arjun Singh,arjun.singh61@example.com,Male,Corporate,Pune,Maharashtra,West,Silver,2024-08-21
+C0062,Pooja Verma,pooja.verma62@example.com,Male,Corporate,Nagpur,Maharashtra,West,Silver,2023-04-02
+C0063,Sneha Verma,sneha.verma63@example.com,Female,Small Business,Mumbai,Maharashtra,West,Bronze,2023-07-26
+C0064,Amit Gupta,amit.gupta64@example.com,Female,Corporate,Pune,Maharashtra,West,Bronze,2022-08-25
+C0065,Priya Sharma,priya.sharma65@example.com,Female,Home Office,Mumbai,Maharashtra,West,Bronze,2025-05-06
+C0066,Sneha Singh,sneha.singh66@example.com,Male,Small Business,Lucknow,Uttar Pradesh,North,Bronze,2024-11-13
+C0067,Karan Verma,karan.verma67@example.com,Male,Corporate,Pune,Maharashtra,West,Silver,2024-06-12
+C0068,Meera Patil,meera.patil68@example.com,Female,Consumer,Kolkata,West Bengal,East,Bronze,2023-11-08
+C0069,Ananya Kulkarni,ananya.kulkarni69@example.com,Female,Home Office,Bengaluru,Karnataka,South,Silver,2025-09-27
+C0070,Ananya Kulkarni,ananya.kulkarni70@example.com,Female,Small Business,Nashik,Maharashtra,West,Bronze,2023-01-28
+C0071,Rahul Jain,rahul.jain71@example.com,Female,Consumer,Lucknow,Uttar Pradesh,North,Silver,2023-09-09
+C0072,Ananya Joshi,ananya.joshi72@example.com,Female,Small Business,Hyderabad,Telangana,South,Silver,2025-04-02
+C0073,Kavya Kumar,kavya.kumar73@example.com,Female,Corporate,Nagpur,Maharashtra,West,Bronze,2024-11-12
+C0074,Aditya Verma,aditya.verma74@example.com,Female,Consumer,Jaipur,Rajasthan,North,Gold,2025-09-21
+C0075,Ananya Joshi,ananya.joshi75@example.com,Male,Consumer,Nagpur,Maharashtra,West,Gold,2022-10-29
+C0076,Riya Jain,riya.jain76@example.com,Female,Corporate,Mumbai,Maharashtra,West,Bronze,2024-07-21
+C0077,Isha Mehta,isha.mehta77@example.com,Male,Consumer,Hyderabad,Telangana,South,Gold,2023-05-15
+C0078,Meera Joshi,meera.joshi78@example.com,Female,Consumer,Nashik,Maharashtra,West,Bronze,2024-11-26
+C0079,Neha Nair,neha.nair79@example.com,Male,Small Business,Mumbai,Maharashtra,West,Bronze,2024-07-23
+C0080,Nisha Kulkarni,nisha.kulkarni80@example.com,Female,Small Business,Lucknow,Uttar Pradesh,North,Bronze,2023-10-12
+C0081,Kavya Nair,kavya.nair81@example.com,Female,Home Office,Nashik,Maharashtra,West,Gold,2024-08-30
+C0082,Priya Mishra,priya.mishra82@example.com,Male,Home Office,Jaipur,Rajasthan,North,Silver,2024-09-19
+C0083,Aditya Shah,aditya.shah83@example.com,Female,Home Office,Bengaluru,Karnataka,South,Silver,2023-04-26
+C0084,Amit Patil,amit.patil84@example.com,Male,Small Business,Nashik,Maharashtra,West,,2022-11-05
+C0085,Rohan Shah,rohan.shah85@example.com,Female,Small Business,Nagpur,Maharashtra,West,Silver,2022-05-12
+C0086,Amit Mehta,amit.mehta86@example.com,Male,Small Business,Hyderabad,Telangana,South,Silver,2022-05-08
+C0087,Vivek Shah,vivek.shah87@example.com,Female,Small Business,Pune,Maharashtra,West,Gold,2025-03-25
+C0088,Pooja Verma,pooja.verma88@example.com,Male,Small Business,Hyderabad,Telangana,South,Gold,2024-05-08
+C0089,Priya Singh,priya.singh89@example.com,Female,Home Office,Delhi,Delhi,North,Bronze,2022-03-01
+C0090,Isha Shah,isha.shah90@example.com,Male,Consumer,Nashik,Maharashtra,West,Silver,2024-08-15
+C0091,Vivek Jain,vivek.jain91@example.com,Male,Small Business,Kolkata,West Bengal,East,Gold,2022-02-25
+C0092,Kavya Deshmukh,kavya.deshmukh92@example.com,Female,Home Office,Pune,Maharashtra,West,Gold,2023-06-17
+C0093,Kavya Gupta,kavya.gupta93@example.com,Female,Small Business,Chennai,Tamil Nadu,South,Silver,2024-02-16
+C0094,Aditya Mehta,aditya.mehta94@example.com,Male,Home Office,Pune,Maharashtra,West,Gold,2025-01-09
+C0095,Aditya Mishra,aditya.mishra95@example.com,Male,Corporate,Kolkata,West Bengal,East,Gold,2022-03-24
+C0096,Aarav Jain,aarav.jain96@example.com,Male,Small Business,Nashik,Maharashtra,West,Bronze,2023-05-04
+C0097,Arjun Jain,arjun.jain97@example.com,Female,Home Office,Nagpur,Maharashtra,West,Gold,2024-08-10
+C0098,Sanjay Jain,sanjay.jain98@example.com,Male,Home Office,Bhubaneswar,Odisha,East,Gold,2022-08-23
+C0099,Vivek Sharma,vivek.sharma99@example.com,Female,Small Business,Bengaluru,Karnataka,South,Bronze,2025-03-25
+C0100,Karan Patil,karan.patil100@example.com,Male,Consumer,Lucknow,Uttar Pradesh,North,Bronze,2025-07-08
+C0101,Ananya Pawar,ananya.pawar101@example.com,Male,Consumer,Kolkata,West Bengal,East,Silver,2025-05-14
+C0102,Amit Singh,amit.singh102@example.com,Male,Home Office,Kolkata,West Bengal,East,Gold,2024-01-29
+C0103,Meera Pawar,meera.pawar103@example.com,Female,Home Office,Delhi,Delhi,North,Bronze,2022-08-05
+C0104,Kavya Shah,kavya.shah104@example.com,Male,Home Office,Nashik,Maharashtra,West,Bronze,2024-06-10
+C0105,Amit Mishra,amit.mishra105@example.com,Female,Home Office,Delhi,Delhi,North,Silver,2024-08-10
+C0106,Neha Pawar,neha.pawar106@example.com,Female,Corporate,Mumbai,Maharashtra,West,Silver,2023-07-26
+C0107,Vivek Jain,vivek.jain107@example.com,Female,Consumer,Kolkata,West Bengal,East,Silver,2024-02-16
+C0108,Sneha Deshmukh,sneha.deshmukh108@example.com,Female,Home Office,Delhi,Delhi,North,Silver,2023-03-11
+C0109,Priya Nair,priya.nair109@example.com,Male,Corporate,Lucknow,Uttar Pradesh,North,Gold,2023-07-20
+C0110,Neha Shah,neha.shah110@example.com,Male,Small Business,Hyderabad,Telangana,South,Bronze,2024-09-27
+C0111,Riya Mehta,riya.mehta111@example.com,Female,Corporate,Pune,Maharashtra,West,Silver,2022-07-10
+C0112,Neha Verma,neha.verma112@example.com,Female,Small Business,Kolkata,West Bengal,East,Bronze,2025-04-06
+C0113,Nisha Gupta,nisha.gupta113@example.com,Female,Home Office,Hyderabad,Telangana,South,Bronze,2025-02-01
+C0114,Kavya Verma,kavya.verma114@example.com,Male,Consumer,Bengaluru,Karnataka,South,Bronze,2023-05-30
+C0115,Karan Gupta,karan.gupta115@example.com,Male,Corporate,Mumbai,Maharashtra,West,Gold,2025-01-02
+C0116,Riya Verma,riya.verma116@example.com,Female,Consumer,Bhubaneswar,Odisha,East,Gold,2025-04-22
+C0117,Ananya Joshi,ananya.joshi117@example.com,Female,Consumer,Chennai,Tamil Nadu,South,Bronze,2023-01-03
+C0118,Amit Deshmukh,amit.deshmukh118@example.com,Male,Home Office,Bengaluru,Karnataka,South,Bronze,2022-04-04
+C0119,Rohan Kumar,rohan.kumar119@example.com,Male,Home Office,Delhi,Delhi,North,Silver,2022-07-30
+C0120,Riya Mehta,,Male,Home Office,Chennai,Tamil Nadu,South,Silver,2023-01-13
+C0121,Arjun Pawar,arjun.pawar121@example.com,Female,Consumer,Mumbai,Maharashtra,West,Bronze,2024-03-31
+C0122,Vihaan Deshmukh,vihaan.deshmukh122@example.com,Female,Consumer,Nashik,Maharashtra,West,Gold,2025-02-26
+C0123,Arjun Kulkarni,arjun.kulkarni123@example.com,Male,Small Business,Hyderabad,Telangana,South,Silver,2025-05-26
+C0124,Kavya Verma,kavya.verma124@example.com,Female,Consumer,Lucknow,Uttar Pradesh,North,Bronze,2024-05-28
+C0125,Arjun Mishra,arjun.mishra125@example.com,Male,Home Office,Nagpur,Maharashtra,West,Bronze,2025-07-05
+C0126,Aditya Deshmukh,aditya.deshmukh126@example.com,Male,Corporate,Nagpur,Maharashtra,West,Gold,2022-12-22
+C0127,Meera Mehta,meera.mehta127@example.com,Female,Home Office,Bhubaneswar,Odisha,East,Gold,2025-05-01
+C0128,Neha Verma,neha.verma128@example.com,Female,Consumer,Bhubaneswar,Odisha,East,Bronze,2023-08-03
+C0129,Neha Nair,neha.nair129@example.com,Male,Small Business,Bengaluru,Karnataka,South,Gold,2025-07-04
+C0130,Amit Joshi,amit.joshi130@example.com,Female,Corporate,Kolkata,West Bengal,East,Gold,2022-11-02
+C0131,Vihaan Deshmukh,vihaan.deshmukh131@example.com,Female,Small Business,Bengaluru,Karnataka,South,Gold,2025-05-03
+C0132,Kavya Shah,kavya.shah132@example.com,Female,Small Business,Bengaluru,Karnataka,South,Silver,2024-04-04
+C0133,Aditya Jain,aditya.jain133@example.com,Female,Home Office,Pune,Maharashtra,West,Gold,2024-06-03
+C0134,Aditya Joshi,aditya.joshi134@example.com,Male,Home Office,Kolkata,West Bengal,East,Bronze,2025-03-24
+C0135,Vihaan Mishra,vihaan.mishra135@example.com,Female,Home Office,Nashik,Maharashtra,West,Gold,2024-08-21
+C0136,Vivek Singh,vivek.singh136@example.com,Male,Small Business,Kolkata,West Bengal,East,Silver,2024-10-04
+C0137,Meera Gupta,meera.gupta137@example.com,Male,Corporate,Chennai,Tamil Nadu,South,Silver,2025-10-04
+C0138,Meera Shah,meera.shah138@example.com,Female,Consumer,Delhi,Delhi,North,Silver,2023-08-14
+C0139,Aditya Gupta,aditya.gupta139@example.com,Male,Small Business,Bengaluru,Karnataka,South,Bronze,2023-10-25
+C0140,Aarav Kumar,aarav.kumar140@example.com,Female,Consumer,Jaipur,Rajasthan,North,Gold,2024-08-04
+C0141,Nisha Gupta,nisha.gupta141@example.com,Female,Consumer,Lucknow,Uttar Pradesh,North,Gold,2024-10-17
+C0142,Priya Kulkarni,priya.kulkarni142@example.com,Female,Small Business,Nashik,Maharashtra,West,Gold,2023-08-13
+C0143,Aarav Kumar,aarav.kumar143@example.com,Male,Home Office,Lucknow,Uttar Pradesh,North,Bronze,2023-05-06
+C0144,Aarav Kulkarni,aarav.kulkarni144@example.com,Male,Consumer,Hyderabad,Telangana,South,Silver,2022-07-10
+C0145,Arjun Kumar,arjun.kumar145@example.com,Female,Home Office,Nashik,Maharashtra,West,Silver,2024-10-17
+C0146,Riya Mehta,riya.mehta146@example.com,Male,Small Business,Nagpur,Maharashtra,West,Gold,2024-07-24
+C0147,Sanjay Kulkarni,sanjay.kulkarni147@example.com,Male,Home Office,Bhubaneswar,Odisha,East,Silver,2022-10-07
+C0148,Sneha Nair,sneha.nair148@example.com,Male,Home Office,Jaipur,Rajasthan,North,Bronze,2023-07-02
+C0149,Ananya Pawar,ananya.pawar149@example.com,Female,Corporate,Lucknow,Uttar Pradesh,North,Silver,2025-04-02
+C0150,Amit Mehta,amit.mehta150@example.com,Female,Small Business,Chennai,Tamil Nadu,South,Silver,2023-11-12
+C0151,Karan Shah,karan.shah151@example.com,Female,Corporate,Nagpur,Maharashtra,West,Silver,2025-03-17
+C0152,Vihaan Gupta,vihaan.gupta152@example.com,Female,Small Business,Bhubaneswar,Odisha,East,Bronze,2024-08-26
+C0153,Rohan Mehta,rohan.mehta153@example.com,Female,Consumer,Pune,Maharashtra,West,Silver,2022-09-16
+C0154,Arjun Kulkarni,arjun.kulkarni154@example.com,Male,Small Business,Delhi,Delhi,North,Bronze,2022-02-01
+C0155,Rohan Patil,rohan.patil155@example.com,Female,Small Business,Delhi,Delhi,North,Bronze,2023-06-27
+C0156,Aditya Pawar,aditya.pawar156@example.com,Female,Home Office,Chennai,Tamil Nadu,South,Bronze,2025-10-13
+C0157,Riya Pawar,riya.pawar157@example.com,Male,Corporate,Jaipur,Rajasthan,North,Bronze,2022-03-15
+C0158,Ananya Joshi,ananya.joshi158@example.com,Female,Consumer,Bhubaneswar,Odisha,East,Bronze,2022-07-05
+C0159,Arjun Mehta,arjun.mehta159@example.com,Male,Consumer,Nashik,Maharashtra,West,Silver,2023-09-06
+C0160,Vihaan Verma,vihaan.verma160@example.com,Female,Corporate,Chennai,Tamil Nadu,South,Gold,2024-02-07
+C0161,Nisha Singh,nisha.singh161@example.com,Male,Corporate,Lucknow,Uttar Pradesh,North,Gold,2025-10-28
+C0162,Aditya Jain,aditya.jain162@example.com,Male,Small Business,Hyderabad,Telangana,South,Bronze,2025-06-23
+C0163,Rohan Joshi,rohan.joshi163@example.com,Female,Small Business,Delhi,Delhi,North,Silver,2025-07-30
+C0164,Aarav Nair,aarav.nair164@example.com,Male,Consumer,Delhi,Delhi,North,Silver,2023-08-13
+C0165,Pooja Jain,pooja.jain165@example.com,Female,Home Office,Bengaluru,Karnataka,South,Silver,2025-08-01
+C0166,Ananya Joshi,ananya.joshi166@example.com,Male,Corporate,Hyderabad,Telangana,South,Silver,2024-09-16
+C0167,Vivek Gupta,vivek.gupta167@example.com,Female,Consumer,Lucknow,Uttar Pradesh,North,Bronze,2023-08-29
+C0168,Isha Verma,isha.verma168@example.com,Male,Small Business,Pune,Maharashtra,West,Silver,2025-03-05
+C0169,Neha Jain,neha.jain169@example.com,Male,Home Office,Chennai,Tamil Nadu,South,Bronze,2023-03-25
+C0170,Rohan Kumar,rohan.kumar170@example.com,Male,Home Office,Mumbai,Maharashtra,West,Silver,2025-07-09
+C0171,Vihaan Jain,vihaan.jain171@example.com,Male,Home Office,Chennai,Tamil Nadu,South,Silver,2022-09-27
+C0172,Meera Deshmukh,meera.deshmukh172@example.com,Female,Home Office,Nagpur,Maharashtra,West,Gold,2022-09-28
+C0173,Priya Nair,priya.nair173@example.com,Female,Consumer,Delhi,Delhi,North,Silver,2023-08-28
+C0174,Aditya Deshmukh,aditya.deshmukh174@example.com,Female,Home Office,Nagpur,Maharashtra,West,Gold,2025-10-17
+C0175,Isha Sharma,isha.sharma175@example.com,Male,Small Business,Bengaluru,Karnataka,South,Silver,2025-01-03
+C0176,Priya Jain,priya.jain176@example.com,Female,Consumer,Hyderabad,Telangana,South,Bronze,2025-07-31
+C0177,Neha Mehta,neha.mehta177@example.com,Female,Corporate,Pune,Maharashtra,West,Bronze,2025-06-22
+C0178,Aditya Kumar,aditya.kumar178@example.com,Female,Consumer,Delhi,Delhi,North,Gold,2023-09-11
+C0179,Vihaan Sharma,vihaan.sharma179@example.com,Male,Consumer,Bengaluru,Karnataka,South,Gold,2024-10-05
+C0180,Amit Deshmukh,amit.deshmukh180@example.com,Female,Small Business,Hyderabad,Telangana,South,Bronze,2024-07-18
